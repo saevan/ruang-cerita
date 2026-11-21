@@ -3,6 +3,9 @@
 **Ruang aman bagi mahasiswa untuk bercerita secara anonim, dibantu AI, dan melapor saat siap.**
 Prototipe untuk **CAKREN HACKSPACE 2026**, Universitas Cakrawala. Tim: Samuel Evan & Muhammad Basyair Ramadhan.
 
+🌐 **Demo online:** https://ruang-cerita.onrender.com · Konsol pendengar: https://ruang-cerita.onrender.com/pendengar
+*(Server gratis: kunjungan pertama setelah lama tidak dipakai butuh ±1 menit untuk bangun.)*
+
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/saevan/ruang-cerita)
 
 ## Masalah
