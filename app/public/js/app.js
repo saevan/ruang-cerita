@@ -11,7 +11,9 @@ const $ = (sel, root = document) => root.querySelector(sel);
 const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
 const fmt = (d) => new Intl.DateTimeFormat("id-ID", { dateStyle: "medium", timeStyle: "short" }).format(new Date(d));
 const fmtTime = (d) => new Intl.DateTimeFormat("id-ID", { timeStyle: "short" }).format(new Date(d));
-const go = (hash) => { location.hash = hash; };
+// Navigation replaces the current history entry instead of adding one, so after a
+// quick exit the browser's Back button cannot walk back through the app's pages.
+const go = (hash) => { history.replaceState(null, "", hash); render(); };
 
 const store = {
   get(k) { try { return JSON.parse(sessionStorage.getItem(k)); } catch { return null; } },
@@ -69,6 +71,7 @@ function openGuideModal() {
 
 function guideHtml() {
   return `
+    <div class="notice" style="margin-bottom:14px">💛 Halaman ini membahas contoh pelecehan. Baca pelan-pelan saja. Kamu bisa berhenti kapan saja, atau tekan <strong>Keluar cepat</strong>.</div>
     <div class="eyebrow">Panduan singkat</div>
     <h2>Apakah ini pelecehan?</h2>
     <p>${md(GUIDE.intro)}</p>
@@ -84,11 +87,28 @@ function guideHtml() {
 }
 
 // quick exit: leave instantly to a neutral site and forget this tab's session
-document.getElementById("quickExit").addEventListener("click", () => {
+function quickExit() {
   try { sessionStorage.clear(); } catch {}
   location.replace("https://www.google.com/search?q=cuaca+hari+ini");
+}
+document.getElementById("quickExit").addEventListener("click", quickExit);
+let lastEsc = 0;
+document.addEventListener("keydown", (e) => {
+  if (e.key !== "Escape") return;
+  document.querySelector(".modal-back")?.remove();
+  if (Date.now() - lastEsc < 800) quickExit();
+  lastEsc = Date.now();
 });
 document.getElementById("sos").addEventListener("click", openSos);
+document.getElementById("sosNav").addEventListener("click", openSos);
+
+// in-app links: navigate without adding browser history entries
+document.addEventListener("click", (e) => {
+  const a = e.target.closest('a[href^="#/"]');
+  if (!a || e.defaultPrevented || e.button !== 0 || e.ctrlKey || e.metaKey || e.shiftKey) return;
+  e.preventDefault();
+  go(a.getAttribute("href"));
+});
 
 // ---------- views ----------
 function landing() {
@@ -638,8 +658,10 @@ async function brankas() {
   for (const en of entries.slice().reverse()) list.appendChild(entryCard(en, async () => { await vault.deleteEntry(en.id); brankas(); }));
 
   const showPending = () => {
-    $("#pv").innerHTML = "";
-    pending.forEach((f) => { const img = document.createElement("img"); img.src = URL.createObjectURL(f); img.alt = f.name; $("#pv").appendChild(img); });
+    const pv = $("#pv");
+    if (!pv) return; // the page changed while files were loading
+    pv.innerHTML = "";
+    pending.forEach((f) => { const img = document.createElement("img"); img.src = URL.createObjectURL(f); img.alt = f.name; pv.appendChild(img); });
   };
   $("#f").addEventListener("change", (e) => { pending = [...pending, ...e.target.files]; showPending(); });
   $("#demo").addEventListener("click", async () => {
@@ -894,8 +916,11 @@ async function render() {
   cleanup = null;
   const path = location.hash.replace(/^#\/?/, "").split("?")[0];
   const view = routes[path] || landing;
-  $$(".nav a").forEach((a) => a.classList.toggle("active", a.getAttribute("href") === `#/${path}`));
-  document.getElementById("sos").classList.toggle("hidden", path === "chat" || path === "paket");
+  $$(".nav a, .bottom-nav a").forEach((a) => a.classList.toggle("active", a.getAttribute("href") === `#/${path}`));
+  const focusMode = path === "chat" || path === "paket"; // chat and report have their own bottom controls
+  document.getElementById("sos").classList.toggle("hidden", focusMode);
+  document.getElementById("bottomNav").classList.toggle("hidden", focusMode);
+  document.body.classList.toggle("has-bottom-nav", !focusMode);
   window.scrollTo(0, 0);
   await view();
 }

@@ -22,13 +22,22 @@
         <a href="#/lapor">Laporkan</a>
         <a href="#/psikolog">Psikolog</a>
       </nav>
-      <button class="quick-exit" id="quickExit" title="Langsung pindah ke situs lain">✕ Keluar cepat</button>
+      <button class="quick-exit" id="quickExit" title="Langsung pindah ke situs lain (atau tekan Esc 2 kali)" aria-label="Keluar cepat ke situs lain. Pintasan: tekan Esc dua kali">✕ Keluar cepat</button>
     </div>
   </header>
 
   <main id="app" aria-live="polite"></main>
 
   <button class="sos" id="sos">🆘 Aku tidak aman</button>
+
+  <!-- phone navigation: within thumb reach -->
+  <nav class="bottom-nav" id="bottomNav" aria-label="Menu bawah">
+    <a href="#/mulai"><span aria-hidden="true">💬</span>Cerita</a>
+    <a href="#/panduan"><span aria-hidden="true">📘</span>Panduan</a>
+    <a href="#/brankas"><span aria-hidden="true">🔒</span>Brankas</a>
+    <a href="#/lapor"><span aria-hidden="true">🛡️</span>Lapor</a>
+    <button type="button" id="sosNav" class="sos-nav"><span aria-hidden="true">🆘</span>Darurat</button>
+  </nav>
 
   <script type="module" src="/js/app.js"></script>
 </body>

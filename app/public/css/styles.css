@@ -281,6 +281,38 @@ input:focus, textarea:focus, select:focus { outline: 2px solid var(--primary); o
 .ai-sugs { display: flex; flex-wrap: wrap; gap: 6px; }
 .ai-sugs button { text-align: left; font-weight: 600; }
 
+/* ---------- keyboard focus (WCAG 2.4.7) ---------- */
+:focus { outline: none; }
+:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; border-radius: 8px; }
+input:focus-visible, textarea:focus-visible, select:focus-visible { outline-offset: 1px; }
+
+/* ---------- phone bottom navigation ---------- */
+.bottom-nav { display: none; }
+@media (max-width: 720px) {
+  .bottom-nav {
+    display: grid; grid-template-columns: repeat(5, 1fr);
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 30;
+    background: var(--surface); border-top: 1px solid var(--line);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .bottom-nav a, .bottom-nav button {
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
+    min-height: 58px; font: inherit; font-size: 0.72rem; font-weight: 700;
+    color: var(--muted); text-decoration: none; background: none; border: 0; cursor: pointer;
+  }
+  .bottom-nav span { font-size: 1.25rem; line-height: 1; }
+  .bottom-nav a.active { color: var(--primary); }
+  .bottom-nav .sos-nav { color: var(--warn); }
+  body.has-bottom-nav { padding-bottom: calc(60px + env(safe-area-inset-bottom)); }
+  body.has-bottom-nav footer { padding-bottom: 32px; }
+  .sos { display: none; }
+
+  /* touch targets at least 44px (Apple HIG / Material) */
+  .btn, .topic, .quick-exit, .link-btn, .quick button, .ai-sugs button, .chat-tools .btn { min-height: 44px; }
+  .stars button { min-width: 44px; min-height: 44px; }
+  details summary { min-height: 44px; display: flex; align-items: center; }
+}
+
 .toast { position: fixed; left: 50%; bottom: 80px; transform: translateX(-50%); background: var(--text); color: var(--bg); padding: 10px 18px; border-radius: 12px; font-weight: 700; z-index: 50; box-shadow: var(--shadow); max-width: calc(100% - 32px); }
 
 @media print {
