@@ -1,0 +1,49 @@
+﻿id_responden,angkatan,fakultas,gender,Q1_tahu_harus_lapor_ke_mana,Q2_pernah_dengar_satgas_ppkpt,Q3_rasa_aman_melapor_1_5,Q4_hambatan_melapor,Q5_langkah_anonim_membantu_1_5,Q6_tahu_layanan_curhat_sga,Q7_pernah_memakai,Q8_alasan_tidak_memakai,Q9_lebih_aman_jika_pendengar_kampus_lain_anonim_1_5,Q10_mau_memakai_aplikasi_1_5,SUMBER
+R001,2025,Kesehatan,Perempuan,Ya,Tidak,1,Tidak tahu harus ke mana; Malu; Takut nilai/masa depan terganggu; Tidak percaya akan ditindaklanjuti,4,Ya,Tidak,Takut cerita menyebar; Pendengar mungkin kenal saya,4,4,DUMMY
+R002,2024,Ilmu Sosial,Perempuan,Tidak,Tidak,3,Malu,3,Ya,Tidak,Malu,5,4,DUMMY
+R003,2025,Kesehatan,Perempuan,Tidak,Tidak,1,Tidak tahu harus ke mana; Malu; Takut nilai/masa depan terganggu,3,Tidak,Tidak,Tidak tahu caranya,5,4,DUMMY
+R004,2024,Kesehatan,Perempuan,Tidak,Ya,5,Tidak tahu harus ke mana,4,Tidak,Tidak,Pendengar mungkin kenal saya,5,1,DUMMY
+R005,2025,Kesehatan,Laki-laki,Ya,Tidak,2,Tidak tahu harus ke mana; Takut nilai/masa depan terganggu; Tidak percaya akan ditindaklanjuti,5,Tidak,Tidak,Malu,4,5,DUMMY
+R006,2025,Hukum,Perempuan,Tidak,Tidak,3,Tidak tahu harus ke mana; Takut nilai/masa depan terganggu; Tidak percaya akan ditindaklanjuti,5,Tidak,Tidak,Takut cerita menyebar; Pendengar mungkin kenal saya,3,5,DUMMY
+R007,2025,Pendidikan,Laki-laki,Tidak,Tidak,1,Tidak tahu harus ke mana,3,Tidak,Tidak,Malu,5,5,DUMMY
+R008,2022,Teknik,Laki-laki,Tidak,Tidak,3,Takut nilai/masa depan terganggu,4,Ya,Tidak,Pendengar bukan profesional; Malu; Tidak tahu caranya,5,4,DUMMY
+R009,2025,Teknik,Perempuan,Tidak,Tidak,4,Tidak tahu harus ke mana,3,Ya,Tidak,Takut cerita menyebar; Malu,5,5,DUMMY
+R010,2025,Kesehatan,Perempuan,Ya,Tidak,1,Tidak tahu harus ke mana; Malu; Takut nilai/masa depan terganggu,4,Tidak,Tidak,Takut cerita menyebar; Pendengar bukan profesional,4,4,DUMMY
+R011,2025,Pendidikan,Perempuan,Tidak,Ya,2,Takut nilai/masa depan terganggu; Tidak percaya akan ditindaklanjuti,4,Tidak,Tidak,Malu,5,5,DUMMY
+R012,2024,Teknik,Tidak menyebut,Tidak,Tidak,1,Tidak percaya akan ditindaklanjuti,4,Ya,Tidak,Tidak tahu caranya,4,5,DUMMY
+R013,2025,Hukum,Perempuan,Tidak,Tidak,1,Tidak tahu harus ke mana; Malu; Takut nilai/masa depan terganggu,5,Ya,Ya,,4,5,DUMMY
+R014,2024,Kesehatan,Laki-laki,Tidak,Tidak,4,Tidak tahu harus ke mana; Takut nilai/masa depan terganggu,2,Ya,Tidak,Takut cerita menyebar; Pendengar mungkin kenal saya,5,4,DUMMY
+R015,2022,Ekonomi & Bisnis,Laki-laki,Tidak,Tidak,1,Tidak tahu harus ke mana; Malu; Takut dilaporkan balik,4,Ya,Tidak,Takut cerita menyebar,4,4,DUMMY
+R016,2022,Pendidikan,Laki-laki,Tidak,Tidak,2,Tidak percaya akan ditindaklanjuti; Takut dilaporkan balik,4,Ya,Ya,,4,5,DUMMY
+R017,2024,Teknik,Laki-laki,Ya,Tidak,1,Tidak percaya akan ditindaklanjuti,5,Ya,Tidak,Takut cerita menyebar,4,5,DUMMY
+R018,2024,Ekonomi & Bisnis,Perempuan,Tidak,Tidak,2,Tidak tahu harus ke mana; Malu; Takut nilai/masa depan terganggu,4,Tidak,Tidak,Takut cerita menyebar; Pendengar mungkin kenal saya,2,3,DUMMY
+R019,2024,Kesehatan,Perempuan,Tidak,Tidak,2,Tidak tahu harus ke mana,3,Ya,Tidak,Takut cerita menyebar,3,4,DUMMY
+R020,2023,Ilmu Sosial,Perempuan,Tidak,Tidak,3,Tidak tahu harus ke mana,5,Tidak,Tidak,Pendengar mungkin kenal saya,5,5,DUMMY
+R021,2022,Hukum,Perempuan,Tidak,Tidak,2,Tidak tahu harus ke mana; Takut nilai/masa depan terganggu; Tidak percaya akan ditindaklanjuti,3,Ya,Tidak,Takut cerita menyebar,5,2,DUMMY
+R022,2024,Teknik,Perempuan,Tidak,Tidak,5,Takut nilai/masa depan terganggu; Takut dilaporkan balik,4,Ya,Tidak,Takut cerita menyebar; Pendengar bukan profesional,5,4,DUMMY
+R023,2024,Ilmu Sosial,Laki-laki,Tidak,Tidak,3,Tidak tahu harus ke mana,4,Ya,Tidak,Takut cerita menyebar; Pendengar mungkin kenal saya,3,4,DUMMY
+R024,2025,Ilmu Sosial,Perempuan,Tidak,Tidak,3,Malu,5,Ya,Tidak,Takut cerita menyebar; Pendengar mungkin kenal saya; Malu,5,5,DUMMY
+R025,2024,Kesehatan,Laki-laki,Tidak,Ya,2,Tidak percaya akan ditindaklanjuti; Takut dilaporkan balik,4,Ya,Tidak,Pendengar bukan profesional,3,5,DUMMY
+R026,2022,Teknik,Perempuan,Tidak,Ya,5,Malu; Takut dilaporkan balik,4,Ya,Tidak,Takut cerita menyebar; Pendengar bukan profesional,4,4,DUMMY
+R027,2025,Pendidikan,Laki-laki,Ya,Ya,2,Tidak tahu harus ke mana; Tidak percaya akan ditindaklanjuti,5,Tidak,Tidak,Takut cerita menyebar; Malu,3,4,DUMMY
+R028,2022,Pendidikan,Laki-laki,Tidak,Tidak,3,Takut nilai/masa depan terganggu; Takut dilaporkan balik,4,Ya,Tidak,Takut cerita menyebar; Pendengar bukan profesional,4,4,DUMMY
+R029,2025,Pendidikan,Perempuan,Tidak,Tidak,3,Tidak tahu harus ke mana; Takut nilai/masa depan terganggu,4,Ya,Tidak,Pendengar mungkin kenal saya; Pendengar bukan profesional,5,4,DUMMY
+R030,2023,Kesehatan,Laki-laki,Tidak,Tidak,5,Malu; Takut dilaporkan balik,5,Ya,Tidak,Takut cerita menyebar,2,5,DUMMY
+R031,2023,Ilmu Sosial,Laki-laki,Tidak,Ya,2,Tidak tahu harus ke mana; Malu; Takut nilai/masa depan terganggu,4,Ya,Tidak,Takut cerita menyebar; Pendengar mungkin kenal saya; Pendengar bukan profesional; Malu; Tidak tahu caranya,5,3,DUMMY
+R032,2022,Hukum,Laki-laki,Tidak,Tidak,3,Malu; Tidak percaya akan ditindaklanjuti; Takut dilaporkan balik,5,Ya,Ya,,4,4,DUMMY
+R033,2024,Pendidikan,Perempuan,Tidak,Ya,2,Malu,5,Ya,Tidak,Takut cerita menyebar; Pendengar mungkin kenal saya,3,2,DUMMY
+R034,2023,Pendidikan,Laki-laki,Tidak,Tidak,3,Tidak tahu harus ke mana; Takut nilai/masa depan terganggu,4,Ya,Tidak,Pendengar mungkin kenal saya; Tidak tahu caranya,4,5,DUMMY
+R035,2024,Pendidikan,Perempuan,Ya,Ya,2,Tidak tahu harus ke mana,4,Ya,Tidak,Takut cerita menyebar; Pendengar bukan profesional,3,2,DUMMY
+R036,2024,Ekonomi & Bisnis,Perempuan,Tidak,Tidak,2,Tidak tahu harus ke mana; Takut nilai/masa depan terganggu; Tidak percaya akan ditindaklanjuti,5,Ya,Tidak,Tidak tahu caranya,4,5,DUMMY
+R037,2024,Ilmu Sosial,Perempuan,Tidak,Tidak,2,Tidak tahu harus ke mana; Malu; Takut nilai/masa depan terganggu,4,Ya,Tidak,Takut cerita menyebar; Malu,4,3,DUMMY
+R038,2022,Hukum,Laki-laki,Tidak,Tidak,2,Malu; Takut nilai/masa depan terganggu; Tidak percaya akan ditindaklanjuti; Takut dilaporkan balik,3,Tidak,Tidak,Takut cerita menyebar; Pendengar bukan profesional,4,3,DUMMY
+R039,2023,Teknik,Perempuan,Ya,Tidak,3,Tidak tahu harus ke mana; Takut nilai/masa depan terganggu; Tidak percaya akan ditindaklanjuti,4,Ya,Ya,,5,5,DUMMY
+R040,2025,Kesehatan,Laki-laki,Tidak,Tidak,1,Takut nilai/masa depan terganggu,4,Ya,Ya,,3,2,DUMMY
+R041,2023,Ilmu Sosial,Laki-laki,Tidak,Tidak,2,Tidak tahu harus ke mana; Malu; Takut nilai/masa depan terganggu; Tidak percaya akan ditindaklanjuti,4,Tidak,Tidak,Takut cerita menyebar; Pendengar mungkin kenal saya; Tidak tahu caranya,4,4,DUMMY
+R042,2022,Pendidikan,Laki-laki,Tidak,Ya,5,Takut nilai/masa depan terganggu,3,Ya,Tidak,Takut cerita menyebar; Tidak tahu caranya,5,3,DUMMY
+R043,2024,Teknik,Laki-laki,Tidak,Ya,3,Malu; Takut nilai/masa depan terganggu; Tidak percaya akan ditindaklanjuti,5,Tidak,Tidak,Takut cerita menyebar,5,4,DUMMY
+R044,2025,Ekonomi & Bisnis,Laki-laki,Tidak,Tidak,2,Malu; Takut nilai/masa depan terganggu,4,Tidak,Tidak,Takut cerita menyebar,4,4,DUMMY
+R045,2022,Ilmu Sosial,Tidak menyebut,Tidak,Ya,2,Tidak tahu harus ke mana; Takut nilai/masa depan terganggu,4,Tidak,Tidak,Takut cerita menyebar; Pendengar bukan profesional,5,5,DUMMY
+R046,2024,Ekonomi & Bisnis,Laki-laki,Ya,Tidak,1,Tidak tahu harus ke mana; Malu; Tidak percaya akan ditindaklanjuti,5,Ya,Tidak,Takut cerita menyebar; Malu,4,4,DUMMY
+R047,2023,Ilmu Sosial,Tidak menyebut,Tidak,Tidak,3,Takut dilaporkan balik,4,Ya,Tidak,Takut cerita menyebar,4,5,DUMMY
+R048,2024,Ilmu Sosial,Perempuan,Tidak,Tidak,1,Tidak tahu harus ke mana; Malu,4,Tidak,Tidak,Pendengar mungkin kenal saya,5,4,DUMMY

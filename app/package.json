@@ -1,0 +1,15 @@
+{
+  "name": "ruang-cerita",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Prototipe hackathon: ruang aman bercerita anonim untuk mahasiswa, dengan pendengar dari kampus lain, brankas bukti, dan jalur lapor.",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "optionalDependencies": {
+    "@anthropic-ai/sdk": "^1.12.0"
+  }
+}
