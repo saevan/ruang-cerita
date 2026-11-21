@@ -102,6 +102,15 @@ document.addEventListener("keydown", (e) => {
 document.getElementById("sos").addEventListener("click", openSos);
 document.getElementById("sosNav").addEventListener("click", openSos);
 
+// light/dark toggle (remembered per viewer; falls back to the device setting)
+document.getElementById("themeBtn").addEventListener("click", () => {
+  const root = document.documentElement;
+  const current = root.getAttribute("data-theme") || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  const next = current === "dark" ? "light" : "dark";
+  root.setAttribute("data-theme", next);
+  try { localStorage.setItem("rc-theme", next); } catch {}
+});
+
 // in-app links: navigate without adding browser history entries
 document.addEventListener("click", (e) => {
   const a = e.target.closest('a[href^="#/"]');
@@ -117,17 +126,15 @@ function landing() {
   <section class="hero"><div class="wrap hero-grid">
     <div>
       <div class="eyebrow">Ruang aman untuk mahasiswa</div>
-      <h1>Cerita aja.<br/>Nggak ada yang tahu ini kamu.</h1>
+      <h1>Cerita aja.<br/><span class="accent-text">Nggak ada yang tahu ini kamu.</span></h1>
       <p class="lead">Pendengar terlatih dari <strong>kampus lain</strong>. Gratis. Tanpa nama. Kalau kamu siap, kami bantu kamu melapor, bahkan kalau kampusmu belum punya Satgas PPKPT.</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary btn-lg" href="#/mulai">Mulai cerita sekarang</a>
-        <button class="btn btn-warn btn-lg" data-sos>Aku tidak aman sekarang</button>
+      <p class="hero-ask">Mau cerita ke siapa?</p>
+      <div class="hero-choices">
+        <a class="card choice" href="#/mulai"><span class="icon">🤝</span><h3>Teman Pendengar</h3><span class="small muted">Gratis · anonim</span><span class="go">Pilih →</span></a>
+        <a class="card choice" href="#/psikolog"><span class="icon">🩺</span><h3>Psikolog</h3><span class="small muted">Berlisensi · harga mahasiswa</span><span class="go">Pilih →</span></a>
+        <a class="card choice" href="#/lapor"><span class="icon">🛡️</span><h3>Laporkan</h3><span class="small muted">Kamu yang memutuskan</span><span class="go">Pilih →</span></a>
       </div>
-      <div class="pill-row">
-        <span class="pill">🔒 Tanpa nama &amp; akun</span>
-        <span class="pill">🏫 Pendengar dari kampus lain</span>
-        <span class="pill">🆓 Gratis</span>
-      </div>
+      <button class="link-btn small" data-sos style="margin-top:14px">🆘 Aku tidak aman sekarang</button>
     </div>
     <div class="hero-card" aria-hidden="true">
       <div class="row" style="display:flex;gap:10px;align-items:center;margin-bottom:12px">
@@ -142,14 +149,12 @@ function landing() {
     </div>
   </div></section>
 
-  <section class="tight"><div class="wrap">
-    <h2>Mau cerita ke siapa?</h2>
-    <div class="grid-3">
-      <a class="card choice" href="#/mulai"><span class="tag">Gratis · Anonim</span><span class="icon">🤝</span><h3>Teman Pendengar</h3><span class="muted">Mahasiswa terlatih dari kampus lain. Kecil kemungkinan kalian saling kenal.</span></a>
-      <a class="card choice" href="#/psikolog"><span class="tag paid">Harga mahasiswa</span><span class="icon">🩺</span><h3>Psikolog Profesional</h3><span class="muted">Berlisensi, dengan nomor SIPP yang ditampilkan. Untuk masalah yang lebih berat.</span></a>
-      <a class="card choice" href="#/lapor"><span class="tag warn">Kamu yang memutuskan</span><span class="icon">🛡️</span><h3>Laporkan Kejadian</h3><span class="muted">Panduan, brankas bukti, dan jalur lapor. Juga untuk kampus yang belum punya Satgas.</span></a>
-    </div>
-  </div></section>
+  <div class="trust"><div class="wrap">
+    <span><i>🔒</i>Tanpa nama &amp; akun</span>
+    <span><i>🏫</i>Pendengar dari kampus lain</span>
+    <span><i>🆓</i>Gratis untuk mahasiswa</span>
+    <span><i>🤖</i>Dibantu AI, diputuskan manusia</span>
+  </div></div>
 
   <section><div class="wrap grid-2" style="align-items:center">
     <div>
@@ -182,11 +187,12 @@ function landing() {
   </div></section>
 
   <section><div class="wrap">
-    <h2>3 langkah</h2>
-    <div class="steps">
-      <div class="card"><h3>Pilih</h3><p class="muted">Mau cerita ke teman pendengar, psikolog, atau langsung membuat laporan.</p></div>
-      <div class="card"><h3>Cerita</h3><p class="muted">Pakai nama samaran. Pendengarmu dari kampus lain dan sudah dilatih.</p></div>
-      <div class="card"><h3>Lanjut kalau perlu</h3><p class="muted">Simpan bukti, ke psikolog, atau buat paket laporan. Semua pilihanmu.</p></div>
+    <div class="eyebrow">Cara kerja</div>
+    <h2>3 langkah, <span class="accent-text">semua pilihanmu</span></h2>
+    <div class="timeline">
+      <div class="step"><div class="num">1</div><h3>Pilih</h3><p class="muted">Mau cerita ke teman pendengar, psikolog, atau langsung membuat laporan.</p></div>
+      <div class="step"><div class="num">2</div><h3>Cerita</h3><p class="muted">Pakai nama samaran. Pendengarmu dari kampus lain dan sudah dilatih.</p></div>
+      <div class="step"><div class="num">3</div><h3>Lanjut kalau perlu</h3><p class="muted">Simpan bukti, ke psikolog, atau buat paket laporan. Kamu yang memutuskan.</p></div>
     </div>
   </div></section>
 
@@ -237,6 +243,16 @@ function landing() {
     <div><a href="#/panduan">Panduan</a> · <a href="#/brankas">Brankas bukti</a> · <a href="#/lapor">Laporkan</a> · <a href="/pendengar">Jadi pendengar</a></div>
   </div></footer>`;
   $$("[data-sos]").forEach((b) => b.addEventListener("click", openSos));
+
+  // gentle reveal as sections scroll into view (CSS turns it off for reduced motion)
+  const parts = $$("main section:not(.hero), main .trust");
+  if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver((entries) => entries.forEach((en) => {
+      if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); }
+    }), { rootMargin: "0px 0px -8% 0px" });
+    parts.forEach((p) => { p.classList.add("reveal"); io.observe(p); });
+    cleanup = () => io.disconnect();
+  }
 }
 
 function listenerCard(l) {
@@ -249,8 +265,10 @@ function listenerCard(l) {
         </div>
         <span class="status">Online</span>
       </div>
-      <div>${l.sga ? '<span class="badge sga">Pendengar SGA</span>' : ""}<span class="badge ok">✓ Terlatih</span><span class="badge">⭐ ${l.rating}</span></div>
+      <div><span class="badge ok">✓ Pendengar Terlatih</span>${l.sga ? '<span class="badge sga">SGA</span>' : ""}</div>
+      <div class="small"><strong style="color:#e3a008">★</strong> <strong>${l.rating}</strong> <span class="muted">(${l.sessions} sesi)</span></div>
       <div class="small muted">Topik: ${esc(l.topics.join(", "))}</div>
+      <a class="btn btn-ghost btn-sm" href="#/mulai" style="margin-top:6px">Mulai cerita →</a>
     </div>`;
 }
 

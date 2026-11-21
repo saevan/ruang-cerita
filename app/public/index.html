@@ -10,6 +10,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/css/styles.css" />
+  <script>
+    // apply the viewer's saved theme before first paint
+    try { var t = localStorage.getItem("rc-theme"); if (t) document.documentElement.setAttribute("data-theme", t); } catch (e) {}
+  </script>
 </head>
 <body>
   <header class="topbar">
@@ -22,6 +26,8 @@
         <a href="#/lapor">Laporkan</a>
         <a href="#/psikolog">Psikolog</a>
       </nav>
+      <a class="btn btn-primary btn-sm header-cta" href="#/mulai">Mulai cerita</a>
+      <button class="theme-btn" id="themeBtn" type="button" aria-label="Ganti tema terang/gelap" title="Ganti tema terang/gelap">🌓</button>
       <button class="quick-exit" id="quickExit" title="Langsung pindah ke situs lain (atau tekan Esc 2 kali)" aria-label="Keluar cepat ke situs lain. Pintasan: tekan Esc dua kali">✕ Keluar cepat</button>
     </div>
   </header>
